@@ -1,0 +1,3 @@
+[submodule "feature.scala"]
+	path = feature.scala
+	url = https://github.com/ThoughtWorksInc/feature.scala.git
