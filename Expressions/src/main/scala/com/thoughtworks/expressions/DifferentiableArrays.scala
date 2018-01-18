@@ -1,6 +1,7 @@
 package com.thoughtworks.expressions
 
-import com.thoughtworks.expressions.Anonymous.Implicitly
+import com.thoughtworks.feature.Factory
+import com.thoughtworks.feature.Factory.Factory0
 
 /**
   * @author 杨博 (Yang Bo)
@@ -38,7 +39,8 @@ trait DifferentiableArrays extends DifferentiableValues with ArrayOperators {
       outer: TypedTerm =>
 
       def computeDelta(context: DifferentiableContext): DeltaTerm = {
-        deltaType.Filled.newInstance(debuggingInformation, arrayFillType.operand0.deltaType.zero(debuggingInformation))
+        deltaType.Filled.newInstance(debuggingInformation,
+                                     arrayFillType.operand0.deltaType.zero(ImplicitlyAppliedFactory.make(debuggingInformation)))
       }
 
     }
